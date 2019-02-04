@@ -8,12 +8,12 @@
     "postinstall": "node node_modules/protractor/bin/webdriver-manager update"
   },
   "dependencies": {
+    "alcz-protractor-runner": "*",
+    "grunt": "*",
     "jasmine-data-provider": "^2.2.0",
     "jasmine-spec-reporter": "^2.4.0",
     "protractor": "*",
-    "selenium-webdriver": "*",
-    "grunt": "*",
-    "grunt-protractor-runner": "*"
+    "selenium-webdriver": "*"
   },
   "author": "Rajat Kumar",
   "license": "ISC"

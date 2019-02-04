@@ -1,12 +1,19 @@
-﻿module.exports = function(grunt) {
-    
+﻿module.exports = function (grunt) {
+
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),        
+        pkg: grunt.file.readJSON('package.json'),
         protractor: {
             options: {
                 keepAlive: true,
                 noColor: false,
                 args: {
+                }
+            },
+            default: {
+                options: {
+                    configFile: 'protractor-config.js',
+                    args: {
+                    }
                 }
             },
             sharded: {
@@ -34,8 +41,8 @@
         }
     });
 
-    grunt.loadNpmTasks('grunt-protractor-runner');
+    grunt.loadNpmTasks('alcz-protractor-runner');
 
-    grunt.registerTask('default', ['protractor:sharded']);
+    grunt.registerTask('default', ['protractor:default']);
 
 };
