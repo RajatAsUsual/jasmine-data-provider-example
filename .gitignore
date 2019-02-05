@@ -2,3 +2,4 @@ node_modules/*
 !node_modules/alcz-protractor-runner/
 !node_modules/alcz-protractor-runner/*
 *.DS_Store
+*.log

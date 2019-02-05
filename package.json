@@ -12,6 +12,7 @@
     "grunt": "*",
     "jasmine-data-provider": "^2.2.0",
     "jasmine-spec-reporter": "^2.4.0",
+    "mongo-mock": "^3.4.0",
     "protractor": "*",
     "selenium-webdriver": "*"
   },

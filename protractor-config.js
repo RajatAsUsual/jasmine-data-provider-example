@@ -1,3 +1,4 @@
+const spawn = require('child_process');
 // An example configuration file.
 exports.config = {
   directConnect: true,
@@ -35,5 +36,7 @@ exports.config = {
         pending: ':x '
       }
     }));
+
+    spawn.execSync('node common/mongo-mock.js');
   }
 };

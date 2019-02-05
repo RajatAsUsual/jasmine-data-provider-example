@@ -1,10 +1,10 @@
-var users = require('../../test-data/test.module.js');
+var users = require('../../../test-data/test.module.js').users;
 var using = require('jasmine-data-provider');
 
 describe('angularjs homepage insert users with json data with control flow', function () {
 
   //Using JSON module from file
-  using(users.data, function (data, description) {
+  using(users, function (data, description) {
     it('should greet the named user - ' + description, function () {
       browser.get('http://www.angularjs.org');
       element(by.model('yourName')).sendKeys(data.name);
