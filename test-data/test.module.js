@@ -15,5 +15,5 @@ module.exports = {
 }
 
 function getUsers(){
-    return data.users.data;
+    return data.users;
 }

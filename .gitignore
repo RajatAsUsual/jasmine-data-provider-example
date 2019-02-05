@@ -3,3 +3,4 @@ node_modules/*
 !node_modules/alcz-protractor-runner/*
 *.DS_Store
 *.log
+test-data/mongo.json

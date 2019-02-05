@@ -1,0 +1,13 @@
+{
+    "users":{
+        "Regular": {
+            "name": "Andrew"
+        },
+        "Special Characters": {
+            "name": "$##!@#!@"
+        },
+        "Chinese": {
+            "name": "拉雅"
+        }
+    }
+}

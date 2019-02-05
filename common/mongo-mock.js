@@ -10,31 +10,22 @@ var url = 'mongodb://localhost:27017/myproject';
 
 MongoClient.connect(url, {}, function (err, db) {
     // Get the documents collection
-    var collection = db.collection('documents');
+    var collection = db.collection('root');
     // Insert some documents
-    var docs = [{ name: 'Andrew' }, { name: '$##!@#!@' }, { name: '拉雅' }];
+    var docs = JSON.parse(fs.readFileSync('common/import.json'));
 
     collection.insertMany(docs, function (err, result) {
         console.log('inserted documents');
 
         function cleanup() {
             
-            let users, count;
             collection.find({}).toArray(function (err, docs) {
-                console.log('found objects');
-                users = docs;
-                count = users.length;
-
-                var document = {};
-                document['users'] = {
-                    data: users,
-                    count: count
-                };
-
+                console.log('found object');
+                
                 if (fs.existsSync('test-data/mongo.json')) {
                     fs.truncateSync('test-data/mongo.json');
                 }                
-                fs.appendFileSync("test-data/mongo.json", JSON.stringify(document));
+                fs.appendFileSync("test-data/mongo.json", JSON.stringify(docs[0]));
                 console.log('created test data');
             });
 
