@@ -1,14 +1,13 @@
+const spawn = require('child_process');
 // An example configuration file.
 exports.config = {
   directConnect: true,
 
   // Capabilities to be passed to the webdriver instance.
   multiCapabilities: [{
-    'browserName': 'chrome',
-    maxInstances: 2
+    'browserName': 'chrome'
   }, {
-    'browserName': 'firefox',
-    maxInstances: 2
+    'browserName': 'firefox'
   }],
 
   // Framework to use. Jasmine is recommended.
@@ -18,7 +17,8 @@ exports.config = {
 
   // Options to be passed to Jasmine.
   jasmineNodeOpts: {
-    defaultTimeoutInterval: 30000
+    defaultTimeoutInterval: 30000,
+    print: function() {}
   },
 
   onPrepare: function () {
@@ -43,5 +43,7 @@ exports.config = {
         pending: ':x '
       }
     }));
+
+    spawn.execSync('node common/mongo-mock.js');
   }
 };

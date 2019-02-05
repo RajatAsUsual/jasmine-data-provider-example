@@ -4,6 +4,7 @@
         pkg: grunt.file.readJSON('package.json'),
         protractor: {
             options: {
+                configFile: 'protractor-config.js',
                 keepAlive: true,
                 noColor: false,
                 args: {
@@ -11,15 +12,18 @@
             },
             default: {
                 options: {
-                    configFile: 'protractor-config.js',
                     args: {
                     }
                 }
             },
             sharded: {
                 options: {
-                    configFile: 'protractor-config.sharded.js',
                     args: {
+                        capabilities: {
+                            'browserName': 'chrome',
+                            shardTestFiles: true,
+                            maxInstances: 2
+                          }
                     }
                 }
             },
